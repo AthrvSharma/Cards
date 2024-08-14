@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" data-card-id="1">
+            <img src="https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg" alt="Card 1">
+            Card 1
+        </div>
+        <div class="card" data-card-id="2">
+            <img src="https://m.media-amazon.com/images/I/81zeKRGCPpL._AC_UF1000,1000_QL80_.jpg" alt="Card 2">
+            Card 2
+        </div>
+        <div class="card" data-card-id="3">
+            <img src="https://m.media-amazon.com/images/I/71pgI2ou5oL._AC_UF1000,1000_QL80_.jpg" alt="Card 3">
+            Card 3
+        </div>
+        <div class="card" data-card-id="4">
+            <img src="https://m.media-amazon.com/images/I/81DN1723hUL._AC_UF1000,1000_QL80_.jpg" alt="Card 4">
+            Card 4
+        </div>
+        <div class="card" data-card-id="5">
+            <img src="https://m.media-amazon.com/images/I/91C1AKPmipL._AC_UF1000,1000_QL80_.jpg" alt="Card 5">
+            Card 5
+        </div>
+        <div class="card" data-card-id="6">
+            <img src="https://m.media-amazon.com/images/I/81NQA1BDlnL._AC_UF1000,1000_QL80_.jpg" alt="Card 6">
+            Card 6
+        </div>
+        <div class="card" data-card-id="7">
+            <img src="https://m.media-amazon.com/images/I/71sH3vxziLL._AC_UF1000,1000_QL80_.jpg" alt="Card 7">
+            Card 7
+        </div>
+        <div class="card" data-card-id="8">
+            <img src="https://m.media-amazon.com/images/I/81aCMT1zKtL._AC_UF1000,1000_QL80_.jpg" alt="Card 8">
+            Card 8
+        </div>
+        <div class="card" data-card-id="9">
+            <img src="https://m.media-amazon.com/images/I/818umIdoruL._AC_UF1000,1000_QL80_.jpg" alt="Card 9">
+            Card 9
+        </div>
+        <div class="card" data-card-id="10">
+            <img src="https://m.media-amazon.com/images/I/71rU7N8t-WL._AC_UF1000,1000_QL80_.jpg" alt="Card 10">
+            Card 10
+        </div>
+        <div class="card" data-card-id="11">
+            <img src="https://m.media-amazon.com/images/I/71MkqYpS3VL._AC_UF1000,1000_QL80_.jpg" alt="Card 11">
+            Card 11
+        </div>
+        <div class="card" data-card-id="12">
+            <img src="https://m.media-amazon.com/images/I/81yS0pwpUaL._AC_UF1000,1000_QL80_.jpg" alt="Card 12">
+            Card 12
+        </div>
+        <div class="card" data-card-id="13">
+            <img src="https://m.media-amazon.com/images/I/71tFv7Gk9QL._AC_UF1000,1000_QL80_.jpg" alt="Card 13">
+            Card 13
+        </div>
+        <div class="card" data-card-id="14">
+            <img src="https://m.media-amazon.com/images/I/51LnVBH+t2L._AC_UF1000,1000_QL80_.jpg" alt="Card 14">
+            Card 14
+        </div>
+        <div class="card" data-card-id="15">
+            <img src="https://m.media-amazon.com/images/I/61cIjm9tYvL._AC_UF1000,1000_QL80_.jpg" alt="Card 15">
+            Card 15
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                const cardId = this.getAttribute('data-card-id');
+                window.location.href = `card-details.html?id=${cardId}`;
+            });
+        });
+    </script>
+</body>
+</html>

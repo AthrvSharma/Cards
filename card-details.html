@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="details-container">
+        <h1 id="card-title">Card Title</h1>
+        <p id="card-description">Description of the card will go here.</p>
+        <a href="index.html">Go Back</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardId = urlParams.get('id');
+
+        const cardData = {
+            1: { title: 'Card 1', description: 'Harry Potter and the Philosophers Stone. Harry Potter and the Philosopher s Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling s debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry. Harry makes close friends and a few enemies during his first year at the school and with the help of his friends, Ron Weasley and Hermione Granger, he faces an attempted comeback by the dark wizard Lord Voldemort, who killed Harry s parents but failed to kill Harry when he was just 15 months old.' },
+            2: { title: 'Card 2', description: 'Harry Potter and the Goblet of Fire. Harry Potter and the Goblet of Fire is a fantasy novel written by British author J. K. Rowling and the fourth novel in the Harry Potter series. It follows Harry Potter, a wizard in his fourth year at Hogwarts School of Witchcraft and Wizardry, and the mystery surrounding the entry of Harry s name into the Triwizard Tournament, in which he is forced to compete.' },
+            3: { title: 'Card 3', description: 'Harry Potter and the Order of the Phoenix. Harry Potter and the Order of the Phoenix is a fantasy novel written by British author J. K. Rowling and the fifth novel in the Harry Potter series. It follows Harry Potter s struggles through his fifth year at Hogwarts School of Witchcraft and Wizardry, including the surreptitious return of the antagonist Lord Voldemort, O.W.L. exams, and an obstructive Ministry of Magic.' },
+            4: { title: 'Card 4', description: 'Harry Potter and the Half-Blood Prince. Harry Potter and the Half-Blood Prince is a fantasy novel written by British author J. K. Rowling and the sixth and penultimate novel in the Harry Potter series. Set during Harry Potter s sixth year at Hogwarts, the novel explores the past of the boy wizard s nemesis, Lord Voldemort, and Harry s preparations for the final battle against Voldemort alongside his headmaster and mentor Albus Dumbledore' },
+            5: { title: 'Card 5', description: 'Harry Potter and the Cursed Child. Harry Potter and the Cursed Child is a play written by Jack Thorne from an original story written by J. K. Rowling, Thorne and John Tiffany. The story is set nineteen years after the events of the 2007 novel Harry Potter and the Deathly Hallows by Rowling. It follows Albus Severus Potter, son of Harry Potter, who is now Head of the Department of Magical Law Enforcement at the Ministry of Magic.' },
+            6: { title: 'Card 6', description: 'Harry Potter and the Prisoner of Azkaban. Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry.' },
+            7: { title: 'Card 7', description: 'Harry Potter and the Deathly Hallows. Harry Potter and the Deathly Hallows is a fantasy novel written by British author J. K. Rowling and the seventh and final novel in the Harry Potter series. It was released on 21 July 2007 in the United Kingdom by Bloomsbury Publishing, in the United States by Scholastic, and in Canada by Raincoast Books' },
+            8: { title: 'Card 8', description: 'Harry Potter and the Deathly Hallows - Part 2. Harry, Ron and Hermione set out on a quest to eliminate the remaining horcruxes. On the other hand, the students and teachers must unite to defend Hogwarts against Lord Voldemort and his minions.' },
+            9: { title: 'Card 9', description: 'Harry Potter and the Chamber of Secrets. A house-elf warns Harry against returning to Hogwarts, but he decides to ignore it. When students and creatures at the school begin to get petrified, Harry finds himself surrounded in mystery.' },
+            10: { title: 'Card 10', description: 'Avengers: Age of Ultron. When Tony Stark (Robert Downey Jr.) jump-starts a dormant peacekeeping program, things go terribly awry, forcing him, Thor (Chris Hemsworth), the Incredible Hulk (Mark Ruffalo) and the rest of the Avengers to reassemble. As the fate of Earth hangs in the balance, the team is put to the ultimate test as they battle Ultron, a technological terror hell-bent on human extinction.' },
+            11: { title: 'Card 11', description: 'Iron Man. A billionaire industrialist and genius inventor, Tony Stark (Robert Downey Jr.), is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon. Instead, he builds an armored suit and upends his captors.' },
+            12: { title: 'Card 12', description: 'The Avengers. When Thor s evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth.' },
+            13: { title: 'Card 13', description: 'I Am Groot. Mischievous toddler Baby Groot learns to grow up among the stars with the help of his friends and family in the dishevelled Guardians of the Galaxy superhero team.' },
+            14: { title: 'Card 14', description: 'Ant - Man. Forced out of his own company by former protégé Darren Cross, Dr. Hank Pym (Michael Douglas) recruits the talents of Scott Lang (Paul Rudd), a master thief just released from prison. Lang becomes Ant-Man, trained by Pym and armed with a suit that allows him to shrink in size.' },
+            15: { title: 'Card 15', description: 'The Consultant. Agents Coulson and Sitwell plan to derail General Thaddeus "Thunderbolt" Ross from interfering with S.H.I.E.L.D. affairs with a special person.' }
+        };
+
+        if (cardData[cardId]) {
+            document.getElementById('card-title').textContent = cardData[cardId].title;
+            document.getElementById('card-description').textContent = cardData[cardId].description;
+        } else {
+            document.getElementById('card-title').textContent = 'Card not found';
+            document.getElementById('card-description').textContent = 'The card you are looking for does not exist.';
+        }
+    </script>
+</body>
+</html>
